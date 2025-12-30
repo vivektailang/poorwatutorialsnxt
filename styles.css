@@ -175,13 +175,13 @@ section p {
 
 /* Testimonials Carousel */
 .testimonials {
-    background: linear-gradient(135deg, #4A90E2, #357ab8);
-    color: white;
+    background: linear-gradient(135deg, #f1f3f5, #f3f4f5);
+    color: rgb(13, 8, 58);
     overflow: hidden;
 }
 
 .testimonials h2 {
-    color: white;
+    color: rgb(10, 9, 17);
 }
 
 .carousel {
@@ -195,7 +195,7 @@ section p {
 .carousel-track {
     display: flex;
     width: 300%;
-    animation: slide 20s infinite linear;
+    animation: slide 90s infinite linear;
 }
 
 .testimonial {
@@ -439,4 +439,154 @@ footer {
     section {
         padding: 70px 0;
     }
+}
+
+/* Milestone Journey Timeline */
+.milestone-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px 0;
+}
+
+.milestone-timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, #4A90E2, #357ab8);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+.milestone-item {
+    padding: 20px 50px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 60px;
+}
+
+.milestone-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.milestone-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.milestone-year {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: #4A90E2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(74,144,226,0.3);
+    z-index: 1;
+}
+
+.milestone-item:nth-child(odd) .milestone-year {
+    right: -45px;
+}
+
+.milestone-item:nth-child(even) .milestone-year {
+    left: -45px;
+}
+
+.milestone-content {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.milestone-content:hover {
+    transform: translateY(-8px);
+}
+
+.milestone-content h3 {
+    color: #4A90E2;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.milestone-content::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 18px solid transparent;
+    top: 50px;
+}
+
+.milestone-item:nth-child(odd) .milestone-content::after {
+    border-left-color: white;
+    right: -36px;
+}
+
+.milestone-item:nth-child(even) .milestone-content::after {
+    border-right-color: white;
+    left: -36px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .milestone-timeline::before {
+        left: 45px;
+    }
+
+    .milestone-item {
+        width: 100%;
+        padding-left: 100px;
+        padding-right: 20px;
+        text-align: left !important;
+    }
+
+    .milestone-item:nth-child(odd),
+    .milestone-item:nth-child(even) {
+        left: 0;
+    }
+
+    .milestone-year {
+        left: 0 !important;
+        right: auto;
+    }
+
+    .milestone-content::after {
+        left: -36px !important;
+        right: auto;
+        border-right-color: white;
+        border-left-color: transparent;
+    }
+}
+
+.mission-vision-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mission-vision-content h3 {
+    font-size: 1.8rem;
+    color: #4A90E2;
+    margin: 40px 0 20px;
+    text-align: left;
+}
+
+.justified-text {
+    text-align: justify;
+    hyphens: auto; /* Improves justification on small screens */
+    margin-bottom: 25px;
+    font-size: 1.15rem;
+    line-height: 1.8;
 }
