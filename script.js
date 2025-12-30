@@ -1,5 +1,5 @@
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
+// Function to initialize mobile menu (call after header is loaded)
+function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
 
@@ -8,23 +8,35 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('show');
         });
 
+        // Close menu when clicking a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('show');
             });
         });
     }
+}
+
+// Load header and footer, then initialize menu
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Header not found');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('common-header').innerHTML = data;
+            initMobileMenu();  // Initialize after header is inserted
+        })
+        .catch(err => console.error(err));
+
+    fetch('footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Footer not found');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('common-footer').innerHTML = data;
+        })
+        .catch(err => console.error(err));
 });
-
-// Load header and footer
-fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('common-header').innerHTML = data;
-    });
-
-fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('common-footer').innerHTML = data;
-    });

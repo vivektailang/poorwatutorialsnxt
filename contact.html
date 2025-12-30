@@ -3,48 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Enrollment - Maths Coaching Class</title>
+    <title>Contact & Location - Maths Coaching Class</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="common-header"></div>
 
     <section id="contact">
         <div class="container">
-            <h2>Enroll Today or Contact Us</h2>
-            <form>
-                <label for="studentName">Student Name *</label>
-                <input type="text" id="studentName" required>
+            <h2>Visit Us / Contact Us</h2>
+            <p>We'd love to hear from you! Reach out via phone or WhatsApp for any inquiries.</p>
 
-                <label for="parentName">Parent Name</label>
-                <input type="text" id="parentName">
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>📍 Address</h3>
+                    <p class="highlight"><strong>Poorwa Tutorials,<br>Pimple Saudagar,<br>Pune, Maharashtra 411027</strong></p>
+                </div>
 
-                <label for="class">Class *</label>
-                <select id="class" required>
-                    <option value="">Select Class</option>
-                    <option>Class 8</option>
-                    <option>Class 9</option>
-                    <option>Class 10</option>
-                    <option>Class 11</option>
-                    <option>Class 12</option>
-                    <option>JEE</option>
-                </select>
-
-                <label for="phone">Phone *</label>
-                <input type="tel" id="phone" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email">
-
-                <label for="message">Message</label>
-                <textarea id="message" rows="5"></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
+                <div class="info-item">
+                    <h3>📞 Mobile</h3>
+                    <p class="highlight"><strong>+91-8698514474</strong></p>
+                    <p>(Call or WhatsApp for quick response)</p>
+                </div>
+            </div>
 
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.666326992299!2d73.795206314796!3d18.595338087379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e0b6e5b5b7%3A0x8e8f8e8f8e8f8e8f!2sPimple%20Saudagar%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411027!5e0!3m2!1sen!2sin!4v1735700000000" 
+                    width="100%" 
+                    height="500" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
