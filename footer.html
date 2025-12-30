@@ -1,0 +1,27 @@
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Maths Coaching Class. All rights reserved.</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/919999999999" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+    // Highlight current page
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = location.pathname.split("/").pop() || 'index.html';
+        const navMap = {
+            'index.html': 'nav-home',
+            'about.html': 'nav-about',
+            'mission.html': 'nav-mission',
+            'gallery.html': 'nav-gallery',
+            'contact.html': 'nav-contact',
+            'journey.html': 'nav-journey',
+            'messages.html': 'nav-messages'
+        };
+        const activeId = navMap[currentPage];
+        if (activeId) {
+            document.getElementById(activeId).classList.add('current');
+        }
+    });
+</script>
