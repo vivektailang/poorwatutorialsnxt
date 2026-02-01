@@ -39,7 +39,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 #branding {
@@ -56,7 +56,7 @@ header .container {
 }
 
 #branding b {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -70,7 +70,7 @@ nav a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: 0.925rem;
     display: flex;
     align-items: center;
     transition: color 0.3s ease;
@@ -78,13 +78,27 @@ nav a {
 
 nav a i {
     margin-right: 8px;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 nav a:hover,
 nav a.current {
     color: #4A90E2;
     font-weight: bold;
+}
+
+nav a.nav-btn {
+    background-color: #25D366;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+nav a.nav-btn:hover {
+    background-color: #128C7E;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
 .hamburger {
@@ -327,7 +341,7 @@ footer {
     }
 
     #branding b {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     section {
