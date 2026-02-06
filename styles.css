@@ -40,6 +40,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    overflow: visible;
 }
 
 #branding {
@@ -118,6 +119,38 @@ nav a.nav-btn:hover {
     cursor: pointer;
     color: #fff;
     padding: 10px;
+}
+
+/* Language Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+    padding: 5px 0;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Modern Hero Carousel Banner */
@@ -345,6 +378,15 @@ footer {
     .cta-btn {
         padding: 12px 28px;
         font-size: 1.1rem;
+    }
+
+    /* Mobile Dropdown */
+    .dropdown-content {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        padding-left: 20px;
+        display: block;
     }
 }
 
@@ -674,6 +716,109 @@ footer {
     
     .teacher-info h3 {
         font-size: 1.4rem;
+    }
+}
+
+@keyframes placardWave {
+    0% {
+        transform: translateX(10px) rotate(3deg);
+        box-shadow: inset 0 0 0 0 rgba(25, 25, 112, 0), 0 5px 15px rgba(74, 144, 226, 0.3);
+    }
+    50% {
+        transform: translateX(-10px) rotate(-3deg);
+        box-shadow: inset 0 0 0 400px #191970, 0 5px 15px rgba(74, 144, 226, 0.3);
+    }
+    100% {
+        transform: translateX(10px) rotate(3deg);
+        box-shadow: inset 0 0 0 0 rgba(25, 25, 112, 0), 0 5px 15px rgba(74, 144, 226, 0.3);
+    }
+}
+
+/* Hording Board Section */
+.hording-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto 80px;
+    max-width: 1200px;
+    padding-bottom: 20px;
+}
+
+.hording-board-item {
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+    flex: 0 0 calc(20% - 24px); /* 5 items per row */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    position: relative;
+    margin-bottom: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    animation: placardWave 4s infinite ease-in-out;
+}
+
+.hording-board-item::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 45px;
+    background: #795548;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.hording-board-item::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 15px);
+    width: 26px;
+    height: 22px;
+    background: #FFCCBC;
+    border-radius: 12px;
+    border: 1px solid #D7CCC8;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.hording-board-item:hover {
+    animation-play-state: paused;
+}
+
+.hording-board-item:nth-child(odd) {
+    animation-duration: 4.2s;
+}
+
+.hording-board-item:nth-child(even) {
+    animation-duration: 3.8s;
+    animation-delay: 0.5s;
+}
+
+@media (max-width: 1024px) {
+    .hording-board-item {
+        flex: 0 0 calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .hording-board-item {
+        flex: 0 0 calc(50% - 15px);
+        font-size: 0.95rem;
+        padding: 15px 10px;
     }
 }
 
