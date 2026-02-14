@@ -115,8 +115,8 @@
             .lightbox img, #lightbox-image {
                 width: auto;
                 height: auto;
-                max-width: none;
-                max-height: none;
+                max-width: 96vw;
+                max-height: 90vh;
                 border-radius: 8px;
                 box-shadow: 0 8px 32px rgba(0,0,0,0.4);
                 background: #fff;
@@ -252,11 +252,10 @@
     </div>
 <script src="script.js" defer></script>
 <script>
-    // Lightbox functionality for results page
+    // Lightbox functionality for results page with panning support
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxCaption = document.getElementById('lightbox-caption');
-    const resultItems = document.querySelectorAll('.result-item');
     const resultImages = Array.from(document.querySelectorAll('.result-item img'));
     let currentIndex = 0;
 
@@ -268,6 +267,7 @@
             lightboxCaption.textContent = img.parentElement.querySelector('p') ? img.parentElement.querySelector('p').textContent : img.alt;
             lightbox.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            resetPan();
         });
     });
 
@@ -275,6 +275,7 @@
     document.querySelector('.lightbox-close').addEventListener('click', () => {
         lightbox.style.display = 'none';
         document.body.style.overflow = 'auto';
+        resetPan();
     });
 
     // Next image
@@ -283,6 +284,7 @@
         const img = resultImages[currentIndex];
         lightboxImage.src = img.getAttribute('data-full') || img.src;
         lightboxCaption.textContent = img.parentElement.querySelector('p') ? img.parentElement.querySelector('p').textContent : img.alt;
+        resetPan();
     });
 
     // Previous image
@@ -291,6 +293,7 @@
         const img = resultImages[currentIndex];
         lightboxImage.src = img.getAttribute('data-full') || img.src;
         lightboxCaption.textContent = img.parentElement.querySelector('p') ? img.parentElement.querySelector('p').textContent : img.alt;
+        resetPan();
     });
 
     // Close lightbox when clicking outside
@@ -298,6 +301,7 @@
         if (e.target === lightbox) {
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
+            resetPan();
         }
     });
 
@@ -309,8 +313,72 @@
         if (e.key === 'Escape') {
             lightbox.style.display = 'none';
             document.body.style.overflow = 'auto';
+            resetPan();
         }
     });
+
+    // Panning logic for lightbox image
+    let isPanning = false, startX = 0, startY = 0, scrollLeft = 0, scrollTop = 0;
+    const lightboxContent = document.querySelector('.lightbox-content');
+
+    function resetPan() {
+        if (lightboxContent) {
+            lightboxContent.scrollLeft = 0;
+            lightboxContent.scrollTop = 0;
+        }
+    }
+
+    if (lightboxContent) {
+        // Mouse events
+        lightboxContent.addEventListener('mousedown', (e) => {
+            isPanning = true;
+            startX = e.pageX - lightboxContent.offsetLeft;
+            startY = e.pageY - lightboxContent.offsetTop;
+            scrollLeft = lightboxContent.scrollLeft;
+            scrollTop = lightboxContent.scrollTop;
+            lightboxContent.style.cursor = 'grabbing';
+        });
+        lightboxContent.addEventListener('mouseleave', () => {
+            isPanning = false;
+            lightboxContent.style.cursor = 'default';
+        });
+        lightboxContent.addEventListener('mouseup', () => {
+            isPanning = false;
+            lightboxContent.style.cursor = 'default';
+        });
+        lightboxContent.addEventListener('mousemove', (e) => {
+            if (!isPanning) return;
+            e.preventDefault();
+            const x = e.pageX - lightboxContent.offsetLeft;
+            const y = e.pageY - lightboxContent.offsetTop;
+            const walkX = x - startX;
+            const walkY = y - startY;
+            lightboxContent.scrollLeft = scrollLeft - walkX;
+            lightboxContent.scrollTop = scrollTop - walkY;
+        });
+        // Touch events
+        lightboxContent.addEventListener('touchstart', (e) => {
+            isPanning = true;
+            const touch = e.touches[0];
+            startX = touch.pageX - lightboxContent.offsetLeft;
+            startY = touch.pageY - lightboxContent.offsetTop;
+            scrollLeft = lightboxContent.scrollLeft;
+            scrollTop = lightboxContent.scrollTop;
+        });
+        lightboxContent.addEventListener('touchend', () => {
+            isPanning = false;
+        });
+        lightboxContent.addEventListener('touchmove', (e) => {
+            if (!isPanning) return;
+            const touch = e.touches[0];
+            const x = touch.pageX - lightboxContent.offsetLeft;
+            const y = touch.pageY - lightboxContent.offsetTop;
+            const walkX = x - startX;
+            const walkY = y - startY;
+            lightboxContent.scrollLeft = scrollLeft - walkX;
+            lightboxContent.scrollTop = scrollTop - walkY;
+        });
+    }
 </script>
 </body>
 </html>
