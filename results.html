@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Poorwa Tutorials</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .results-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+        .result-item {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(74,144,226,0.10);
+            padding: 18px 12px 12px 12px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .result-item img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(74,144,226,0.08);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .result-item img:hover {
+            transform: scale(1.04);
+        }
+        .result-item p {
+            font-size: 1.05rem;
+            color: #357ab8;
+            margin: 0;
+            word-break: break-word;
+        }
+        @media (max-width: 600px) {
+            .results-gallery {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .result-item {
+                padding: 10px 4px 8px 4px;
+            }
+            .result-item img {
+                max-width: 98vw;
+            }
+            #results h2 {
+                font-size: 1.3rem;
+            }
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.open { display: flex; }
+        .modal img {
+            max-width: 96vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            background: #fff;
+        }
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 32px;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10001;
+            background: none;
+            border: none;
+        }
+    </style>
+    <style>
+        /* Simple modal for image popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.open { display: flex; }
+        .modal img {
+            max-width: 96vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+            .lightbox-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                overflow: auto;
+                max-width: 98vw;
+                max-height: 96vh;
+            }
+            .lightbox img, #lightbox-image {
+                width: auto;
+                height: auto;
+                max-width: none;
+                max-height: none;
+                border-radius: 8px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+                background: #fff;
+                display: block;
+            }
+        .modal-close {
+            position: absolute;
+            top: 18px; right: 32px;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10001;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="common-header"></div>
+    <section id="results">
+        <div class="container">
+            <h2>Yearwise Results</h2>
+            <p>Explore our students' outstanding achievements in board exams and competitive tests, year by year. Each image highlights the success stories and milestones of Poorwa Tutorials and Shree Tutorials students.</p>
+            <div class="results-gallery">
+                <!-- 2026 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2026_8th_jan_punepulse_advertisement.jpeg" alt="2026 8th Jan Pune Pulse Advertisement">
+                    <p>2026 - 8th Jan Pune Pulse Advertisement</p>
+                </div>
+                <!-- 2025 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2025_3rd_july_punepulse_advertisement.jpeg" alt="2025 3rd July Pune Pulse Advertisement">
+                    <p>2025 - 3rd July Pune Pulse Advertisement</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2025_3rd_july_punepulse_advertisement_review_comments.jpeg" alt="2025 3rd July Pune Pulse Advertisement Review Comments">
+                    <p>2025 - 3rd July Pune Pulse Advertisement Review Comments</p>
+                </div>
+                <!-- 2023 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2023_Punepulse_from_2018_to_2023.jpeg" alt="2023 Pune Pulse from 2018 to 2023">
+                    <p>2023 - Pune Pulse (2018 to 2023)</p>
+                </div>
+                <!-- 2022 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2022_Pune Pulse Ad 21 Jan 2022 10th, 12th CBSE Maths Result Batch 2020-21.jpg" alt="2022 Pune Pulse Ad 21 Jan 2022 10th, 12th CBSE Maths Result Batch 2020-21">
+                    <p>2022 - Pune Pulse Ad (10th, 12th CBSE Maths Result Batch 2020-21)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2022_Pune Pulse Ad 21 Jan 2022 CBSE 10th Science, 12th Chemistry Result Batch 2020-21.jpg.jpg" alt="2022 Pune Pulse Ad 21 Jan 2022 CBSE 10th Science, 12th Chemistry Result Batch 2020-21">
+                    <p>2022 - Pune Pulse Ad (CBSE 10th Science, 12th Chemistry Result Batch 2020-21)</p>
+                </div>
+                <!-- 2021 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2021_Pune Pulse ad Poorwa Shree Tutorials 14th Aug 2021.jpeg" alt="2021 Pune Pulse ad Poorwa Shree Tutorials 14th Aug 2021">
+                    <p>2021 - Pune Pulse ad (Poorwa & Shree Tutorials, 14th Aug 2021)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2021_Pune Pulse ad Poorwa Tutorials 5th Dec 2021.jpg" alt="2021 Pune Pulse ad Poorwa Tutorials 5th Dec 2021">
+                    <p>2021 - Pune Pulse ad (Poorwa Tutorials, 5th Dec 2021)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2021_Pune Pulse ad Shree Tutorials 5th Dec 2021.jpg" alt="2021 Pune Pulse ad Shree Tutorials 5th Dec 2021">
+                    <p>2021 - Pune Pulse ad (Shree Tutorials, 5th Dec 2021)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2021_Pune Pulse ad Shree Tutorials Reviews 5th Dec 2021.jpg" alt="2021 Pune Pulse ad Shree Tutorials Reviews 5th Dec 2021">
+                    <p>2021 - Pune Pulse ad (Shree Tutorials Reviews, 5th Dec 2021)</p>
+                </div>
+                <!-- 2020 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2020_10th Batch Results Dec 2020 Poorwa Tutorials.jpg" alt="2020 10th Batch Results Dec 2020 Poorwa Tutorials">
+                    <p>2020 - 10th Batch Results (Dec 2020, Poorwa Tutorials)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2020_Pune Pulse ad Dec 2020 Poorwa Tutorials.jpeg" alt="2020 Pune Pulse ad Dec 2020 Poorwa Tutorials">
+                    <p>2020 - Pune Pulse ad (Dec 2020, Poorwa Tutorials)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2020_Shree Tutorials Results-of-2020-CBSE-10-th-SCIENCE-AND-12-th-CHEMISTRY-1.jpg" alt="2020 Shree Tutorials Results of 2020 CBSE 10th Science and 12th Chemistry">
+                    <p>2020 - Shree Tutorials Results (CBSE 10th Science & 12th Chemistry)</p>
+                </div>
+                <!-- 2019 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2019_Poorwa and Shree Tutorials  Result 10th Shree 2018 19-1.jpg" alt="2019 Poorwa and Shree Tutorials Result 10th Shree 2018-19">
+                    <p>2019 - Poorwa & Shree Tutorials Result (10th Shree 2018-19)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2019_Poorwa Tutorials_2019_Toppers.jpeg" alt="2019 Poorwa Tutorials 2019 Toppers">
+                    <p>2019 - Poorwa Tutorials Toppers</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2019_Results Shree and Poorwa Tutorials 10th CBSE Science 12th CBSE Chemistry.jpg" alt="2019 Results Shree and Poorwa Tutorials 10th CBSE Science 12th CBSE Chemistry">
+                    <p>2019 - Shree & Poorwa Tutorials (10th CBSE Science, 12th CBSE Chemistry)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2019_Shree and Poorwa Tutorials Result_2018_19-1.jpeg" alt="2019 Shree and Poorwa Tutorials Result 2018-19">
+                    <p>2019 - Shree & Poorwa Tutorials Result (2018-19)</p>
+                </div>
+                <!-- 2018 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2018_Shree Tutorials Results 10th CBSE Science 12th CBSE 2020.jpg" alt="2018 Shree Tutorials Results 10th CBSE Science 12th CBSE 2020">
+                    <p>2018 - Shree Tutorials Results (10th CBSE Science, 12th CBSE 2020)</p>
+                </div>
+                <div class="result-item">
+                    <img src="img/results_yearwise/2018_Shree Tutorials_Results-X-CBSE-2018-8.jpg" alt="2018 Shree Tutorials Results X CBSE 2018">
+                    <p>2018 - Shree Tutorials Results (X CBSE 2018)</p>
+                </div>
+                <!-- 2017 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2017_Poorwa and Shree Tutorials -results-of-10th-12th-JEE-CET-2016-1017.jpg" alt="2017 Poorwa and Shree Tutorials Results of 10th 12th JEE CET 2016-2017">
+                    <p>2017 - Poorwa & Shree Tutorials Results (10th, 12th, JEE, CET 2016-17)</p>
+                </div>
+                <!-- 2016 -->
+                <div class="result-item">
+                    <img src="img/results_yearwise/2016_Shree Tutorials_Fantastic-results-2016.jpg" alt="2016 Shree Tutorials Fantastic Results 2016">
+                    <p>2016 - Shree Tutorials Fantastic Results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="common-footer"></div>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <p id="lightbox-caption"></p>
+        </div>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+<script src="script.js" defer></script>
+<script>
+    // Lightbox functionality for results page
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const resultItems = document.querySelectorAll('.result-item');
+    const resultImages = Array.from(document.querySelectorAll('.result-item img'));
+    let currentIndex = 0;
+
+    // Open lightbox
+    resultImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            lightboxImage.src = img.getAttribute('data-full') || img.src;
+            lightboxCaption.textContent = img.parentElement.querySelector('p') ? img.parentElement.querySelector('p').textContent : img.alt;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close lightbox
+    document.querySelector('.lightbox-close').addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    // Next image
+    document.querySelector('.lightbox-next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % resultImages.length;
+        const img = resultImages[currentIndex];
+        lightboxImage.src = img.getAttribute('data-full') || img.src;
+        lightboxCaption.textContent = img.parentElement.querySelector('p') ? img.parentElement.querySelector('p').textContent : img.alt;
+    });
+
+    // Previous image
+    document.querySelector('.lightbox-prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + resultImages.length) % resultImages.length;
+        const img = resultImages[currentIndex];
+        lightboxImage.src = img.getAttribute('data-full') || img.src;
+        lightboxCaption.textContent = img.parentElement.querySelector('p') ? img.parentElement.querySelector('p').textContent : img.alt;
+    });
+
+    // Close lightbox when clicking outside
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display !== 'flex') return;
+        if (e.key === 'ArrowRight') document.querySelector('.lightbox-next').click();
+        if (e.key === 'ArrowLeft') document.querySelector('.lightbox-prev').click();
+        if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+</script>
+</body>
+</html>
