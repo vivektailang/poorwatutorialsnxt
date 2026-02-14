@@ -1,3 +1,32 @@
+/* Hero Button Row for Home Page */
+.hero-btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.hero-btn-row .hero-farewell-btn {
+    background: #f4b41a;
+    color: #1c1c1c;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 12px 32px;
+    font-size: 1.08rem;
+    box-shadow: 0 4px 16px rgba(244,180,26,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+.hero-btn-row .hero-farewell-btn:hover {
+    background: #ffd36b;
+    color: #205080;
+}
+.hero-btn-row .hero-results-cta {
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 12px 32px;
+    font-size: 1.08rem;
+}
 /* Farewell Ticket Strip (Post Office Ticket Style) */
 .farewell-ticket-strip {
     width: 100vw;
