@@ -39,7 +39,7 @@ Alternatively, open the repository in VS Code and use the Live Server extension.
 | --- | --- | --- |
 | Home | [`index.html`](index.html) | Landing page, class offerings, hero carousel, and Google reviews embed. |
 | About Us | [`about.html`](about.html) | Founder profile, background, mission, and vision. |
-| Results | [`results.html`](results.html) | Year-by-year achievement images with an image lightbox. |
+| Results | [`results.html`](results.html) | Unified Class 10 2026 student cards sorted by marks, with blank photo placeholders where portraits are not yet available, historical achievement images, and an image lightbox. |
 | Gallery | [`gallery.html`](gallery.html) | Student, batch, and event photos with a navigable lightbox. |
 | Contact | [`contact.html`](contact.html) | Contact details, location, and Google Maps embed. |
 | Our Journey | [`journey.html`](journey.html) | Institute milestones and history. |

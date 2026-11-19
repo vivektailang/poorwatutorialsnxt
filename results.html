@@ -41,6 +41,47 @@
             margin: 0;
             word-break: break-word;
         }
+        .result-item .result-score {
+            margin-top: 4px;
+            color: #555;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .class10-results-gallery .result-item img {
+            max-width: 100%;
+            height: 130px;
+            object-fit: contain;
+            background: #f4f7fb;
+        }
+        .class10-results-gallery .result-photo-placeholder {
+            width: 100%;
+            height: 130px;
+            margin: 0 auto 10px;
+            background: #f4f7fb;
+            border-radius: 8px;
+        }
+        .class10-results-gallery {
+            grid-template-columns: repeat(10, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .class10-results-gallery .result-item {
+            min-width: 0;
+            padding: 8px 4px;
+        }
+        .class10-results-gallery .result-item p {
+            font-size: 0.78rem;
+        }
+        .class10-results-gallery .result-item .result-score {
+            font-size: 0.7rem;
+        }
+        .class10-results-section h3 {
+            margin-top: 32px;
+            color: #205080;
+            font-size: 1.6rem;
+        }
+        .class10-results-section > p {
+            margin-top: 8px;
+        }
         @media (max-width: 600px) {
             .results-gallery {
                 grid-template-columns: 1fr;
@@ -52,8 +93,38 @@
             .result-item img {
                 max-width: 98vw;
             }
+            .class10-results-gallery .result-item img {
+                height: 320px;
+            }
+            .class10-results-gallery .result-photo-placeholder {
+                height: 320px;
+            }
             #results h2 {
                 font-size: 1.3rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .class10-results-gallery {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 10px;
+            }
+            .class10-results-gallery .result-item img,
+            .class10-results-gallery .result-photo-placeholder {
+                height: 180px;
+            }
+        }
+        @media (max-width: 600px) {
+            .class10-results-gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 480px) {
+            .class10-results-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .class10-results-gallery .result-item img,
+            .class10-results-gallery .result-photo-placeholder {
+                height: 150px;
             }
         }
         /* Modal styles */
@@ -140,6 +211,147 @@
         <div class="container">
             <h2>Yearwise Results</h2>
             <p>Explore our students' outstanding achievements in board exams and competitive tests, year by year. Each image highlights the success stories and milestones of Poorwa Tutorials and Shree Tutorials students.</p>
+            <section class="class10-results-section" aria-labelledby="class10-results-heading">
+                <h3 id="class10-results-heading">Class 10 Results 2026</h3>
+                <p>Class 10 students are listed by marks, highest first. Blank photo spaces indicate that a portrait has not yet been provided; entries without marks are listed last.</p>
+                <div class="results-gallery class10-results-gallery">
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/aarush-arora.jpeg" alt="Portrait of Aarush Arora" loading="lazy" decoding="async">
+                        <p>Aarush Arora</p>
+                        <p class="result-score">Marks: 95</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/aashka-thakkar.jpeg" alt="Portrait of Aashka Thakkar" loading="lazy" decoding="async">
+                        <p>Aashka Thakkar</p>
+                        <p class="result-score">Marks: 92</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/adityasingh-karbhari.jpg" alt="Portrait of Adityasingh Karbhari" loading="lazy" decoding="async">
+                        <p>Adityasingh Karbhari</p>
+                        <p class="result-score">Marks: 95</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/anishka-lodha.jpg" alt="Portrait of Anishka Lodha" loading="lazy" decoding="async">
+                        <p>Anishka Lodha</p>
+                        <p class="result-score">Marks: 93</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/ansh-ramchandani.jpg" alt="Portrait of Ansh Ramchandani" loading="lazy" decoding="async">
+                        <p>Ansh Ramchandani</p>
+                        <p class="result-score">Marks: 91</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/arush-jain.jpg" alt="Portrait of Arush Jain" loading="lazy" decoding="async">
+                        <p>Arush Jain</p>
+                        <p class="result-score">Marks: 90</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/ayush-indrajeet-kurakuri.jpg" alt="Portrait of Ayush Indrajeet Kurakuri" loading="lazy" decoding="async">
+                        <p>Ayush Indrajeet Kurakuri</p>
+                        <p class="result-score">Marks: 82</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/dhriti-manchharamani.jpg" alt="Portrait of Dhriti Manchharamani" loading="lazy" decoding="async">
+                        <p>Dhriti Manchharamani</p>
+                        <p class="result-score">Marks: 80</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/dhruv-shinde.png" alt="Portrait of Dhruv Shinde" loading="lazy" decoding="async">
+                        <p>Dhruv Shinde</p>
+                        <p class="result-score">Marks: 79</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/gautam-vineet-tutari.jpg" alt="Portrait of Gautam Vineet Tutari" loading="lazy" decoding="async">
+                        <p>Gautam Vineet Tutari</p>
+                        <p class="result-score">Marks: 90</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/harshil-singla.jpg" alt="Portrait of Harshil Singla" loading="lazy" decoding="async">
+                        <p>Harshil Singla</p>
+                        <p class="result-score">Marks: 94</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/harshit-godbole.jpg" alt="Portrait of Harshit Godbole" loading="lazy" decoding="async">
+                        <p>Harshit Godbole</p>
+                        <p class="result-score">Marks: 77</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/kabir-bhatia.jpg" alt="Portrait of Kabir Bhatia" loading="lazy" decoding="async">
+                        <p>Kabir Bhatia</p>
+                        <p class="result-score">Marks: 95</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/murtaza-ravat.jpg" alt="Portrait of Murtaza Ravat" loading="lazy" decoding="async">
+                        <p>Murtaza Ravat</p>
+                        <p class="result-score">Marks: 99</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/neil-oza.jpg" alt="Portrait of Neil Oza" loading="lazy" decoding="async">
+                        <p>Neil Oza</p>
+                        <p class="result-score">Marks: 69</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/pratyush-mohanty.jpg" alt="Portrait of Pratyush Mohanty" loading="lazy" decoding="async">
+                        <p>Pratyush Mohanty</p>
+                        <p class="result-score">Marks: 95</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/purav-shah.jpg" alt="Portrait of Purav Shah" loading="lazy" decoding="async">
+                        <p>Purav Shah</p>
+                        <p class="result-score">Marks: 96</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/saee-kane.jpg" alt="Portrait of Saee Kane" loading="lazy" decoding="async">
+                        <p>Saee Kane</p>
+                        <p class="result-score">Marks: 82</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/samiksha-patil.jpg" alt="Portrait of Samiksha Patil" loading="lazy" decoding="async">
+                        <p>Samiksha Patil</p>
+                        <p class="result-score">Marks: 85</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/sanjeevani-nirmal.jpg" alt="Portrait of Sanjeevani Nirmal" loading="lazy" decoding="async">
+                        <p>Sanjeevani Nirmal</p>
+                        <p class="result-score">Marks: 92</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/sarakshi-tiwari.jpeg" alt="Portrait of Sarakshi Tiwari" loading="lazy" decoding="async">
+                        <p>Sarakshi Tiwari</p>
+                        <p class="result-score">Marks: 70</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/shanmukh-prasad.jpg" alt="Portrait of Shanmukh Prasad" loading="lazy" decoding="async">
+                        <p>Shanmukh Prasad</p>
+                        <p class="result-score">Marks: 68</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/shreyas-mulik.jpg" alt="Portrait of Shreyas Mulik" loading="lazy" decoding="async">
+                        <p>Shreyas Mulik</p>
+                        <p class="result-score">Marks: 84</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/soham-deshmane.jpg" alt="Portrait of Soham Deshmane" loading="lazy" decoding="async">
+                        <p>Soham Deshmane</p>
+                        <p class="result-score">Marks: 88</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/soham-shailesh-pathak.jpg" alt="Portrait of Soham Shailesh Pathak" loading="lazy" decoding="async">
+                        <p>Soham Shailesh Pathak</p>
+                        <p class="result-score">Marks: 63</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/srushti-kokate.jpg" alt="Portrait of Srushti Kokate" loading="lazy" decoding="async">
+                        <p>Srushti Kokate</p>
+                        <p class="result-score">Marks: 95</p>
+                    </div>
+                    <div class="result-item">
+                        <img src="img/results_2026_class10/vihaan-prakash.jpg" alt="Portrait of Vihaan Prakash" loading="lazy" decoding="async">
+                        <p>Vihaan Prakash</p>
+                        <p class="result-score">Marks: 86</p>
+                    </div>
+                </div>
+            </section>
             <div class="results-gallery">
                 <!-- 2026 -->
                 <div class="result-item">
@@ -252,6 +464,127 @@
     </div>
 <script src="script.js" defer></script>
 <script>
+    const class10ResultsGallery = document.querySelector('.class10-results-gallery');
+    const additionalClass10Students = [
+        ['Gauri Purkar', 96],
+        ['Purva Kshirsagar', 96],
+        ['Aayush Ingale', 95],
+        ['Aliya Srivastava', 95],
+        ['Deyvanee Nirmal', 95],
+        ['Ishani Gandhi', 95],
+        ['Pranay Chakrabarty', 95],
+        ['Siddhant Narayan Mali', 95],
+        ['Utkarsh Sardey', 95],
+        ['Arnav Shewale', 94],
+        ['Aayushi Dewangan', 93],
+        ['Parth Jadhao', 92],
+        ['Parth Nehete', 92],
+        ['Apurva Patil', 91],
+        ['Arnav Chaple', 91],
+        ['Shreyan Deshpande', 91],
+        ['Vandit Tandon', 91],
+        ['Meetansh Agrawal', 90],
+        ['Arnav Naik', 89],
+        ['Raghav Phadnis', 89],
+        ['Tanmay Pardeshi', 89],
+        ['Yash Jagtap', 89],
+        ['Aditya Nalwadkar', 88],
+        ['Arush Mehta', 88],
+        ['Isha Tapi', 88],
+        ['Mathew Thomas', 88],
+        ['Rajveer Patil', 88],
+        ['Sarvesh Nimkar', 86],
+        ['Vihaan Gandham', 86],
+        ['Archita Mahulkar', 85],
+        ['Dhriti Sengar', 85],
+        ['Dhriti Tammanavar', 85],
+        ['Sayuri Haware', 85],
+        ['Adveya Malge', 84],
+        ['Pranali Prabhune', 84],
+        ['Swanandi Kamitkar', 84],
+        ['Ananya Bhamare', 83],
+        ['Anshika Verma', 83],
+        ['Mrunmayi Mandare', 83],
+        ['Shreyash Neema', 83],
+        ['Alokita Durugkar', 82],
+        ['Anushka Shengale', 82],
+        ['Arnav Patil', 81],
+        ['Ishan Patil', 80],
+        ['Mishita Sinha', 80],
+        ['Shaurya Srivastava', 80],
+        ['Amani Patil', 79],
+        ['Ashira Joshi', 79],
+        ['Shubh Raman', 79],
+        ['Bruhati Gavande', 78],
+        ['Aarushi Sahu', 77],
+        ['Mita Bhakare', 77],
+        ['Mridini Mohapatra', 77],
+        ['Prisha Gawarshettiwar', 77],
+        ['Gargi Jawale', 76],
+        ['Rishika Surana', 76],
+        ['Tanvi Saini', 75],
+        ['Apoorva Wayse', 74],
+        ['Twesha Verma', 74],
+        ['Aarya Mayur', 73],
+        ['Arisha Diwate', 73],
+        ['Dnyanesh Patil', 73],
+        ['Bhavni Komalwar', 71],
+        ['Srishti Biradar', 71],
+        ['Mrudul Nagpure', 69],
+        ['Shravani Honap', 69],
+        ['Bhargavi Deshpande', 65],
+        ['Anvi Savant', 63],
+        ['Shravani Shingate', 55],
+        ['Anuj Dhamale', null],
+        ['Shreyas Sudam', null],
+        ['Shubhan Venkatesh', null],
+        ['Mannat Wadhera', null],
+        ['Shreyasi Mitra', null],
+        ['Ninad Naik', null],
+        ['Tejas Karamore', null],
+        ['Radha Pandekar', null],
+        ['Aishani Hingwe', null],
+        ['Arav Chincholkar', null],
+        ['Laksh Rakhyani', null]
+    ];
+
+    additionalClass10Students.forEach(([name, marks]) => {
+        const card = document.createElement('div');
+        card.className = 'result-item';
+
+        const placeholder = document.createElement('div');
+        placeholder.className = 'result-photo-placeholder';
+        placeholder.setAttribute('role', 'img');
+        placeholder.setAttribute('aria-label', `Photo not provided for ${name}`);
+
+        const studentName = document.createElement('p');
+        studentName.textContent = name;
+
+        const score = document.createElement('p');
+        score.className = 'result-score';
+        score.textContent = marks === null ? 'Marks: Not provided' : `Marks: ${marks}`;
+
+        card.append(placeholder, studentName, score);
+        class10ResultsGallery.appendChild(card);
+    });
+
+    const class10ResultCards = Array.from(class10ResultsGallery.querySelectorAll('.result-item'));
+
+    class10ResultCards.sort((first, second) => {
+        const firstScore = first.querySelector('.result-score').textContent.match(/\d+/);
+        const secondScore = second.querySelector('.result-score').textContent.match(/\d+/);
+        const firstMarks = firstScore ? Number(firstScore[0]) : -1;
+        const secondMarks = secondScore ? Number(secondScore[0]) : -1;
+
+        if (firstMarks !== secondMarks) return secondMarks - firstMarks;
+
+        const firstName = first.querySelector('p:not(.result-score)').textContent.trim();
+        const secondName = second.querySelector('p:not(.result-score)').textContent.trim();
+        return firstName.localeCompare(secondName);
+    });
+
+    class10ResultCards.forEach(card => class10ResultsGallery.appendChild(card));
+
     // Lightbox functionality for results page with panning support
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');

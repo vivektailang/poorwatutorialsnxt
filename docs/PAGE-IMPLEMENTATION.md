@@ -84,10 +84,45 @@ Most pages contain `#common-header` and `#common-footer`; `script.js` fetches `h
 
 - The page heading is “Yearwise Results”.
 - Introductory copy presents the images as year-by-year student achievements in board exams and competitive tests, including Poorwa Tutorials and Shree Tutorials results.
-- Each `.result-item` contains an image and a visible year/description caption. The data is hard-coded in HTML rather than loaded from a results API.
+- A “Class 10 Results 2026” section appears before the historical yearwise gallery. It displays 107 student cards: 27 supplied portraits and 80 students whose portraits were not supplied.
+- All 107 cards share one grid and are sorted by descending marks; students with equal marks are sorted alphabetically by displayed name. The grid shows 10 cards per row on wide screens, reducing to five, three, or two columns at narrower breakpoints. The 11 students for whom marks were not supplied are shown as “Marks: Not provided” at the end, alphabetically. The duplicate Arnav Shewale row in the source is listed once.
+- Cards without a supplied portrait use a blank, accessible placeholder instead of a broken image. Actual portrait cards retain their image, name, and marks. The photo lightbox includes only cards with real images.
+- The 27 supplied portraits are marked up in HTML; additional names and marks are stored in the inline script as a small data list and rendered into the same gallery at page load. Results are not loaded from an API.
 - Results grid styling and the lightbox CSS are inline in this page, in addition to shared `styles.css`.
 
 **Image inventory**
+
+The 2026 portrait section uses `img/results_2026_class10/`. The public card captions use the student names below; filenames intentionally omit school names that appeared in the source filenames:
+
+| Caption | Marks | Image |
+| --- | ---: | --- |
+| Aarush Arora | 95 | `aarush-arora.jpeg` |
+| Aashka Thakkar | 92 | `aashka-thakkar.jpeg` |
+| Adityasingh Karbhari | 95 | `adityasingh-karbhari.jpg` |
+| Anishka Lodha | 93 | `anishka-lodha.jpg` |
+| Ansh Ramchandani | 91 | `ansh-ramchandani.jpg` |
+| Arush Jain | 90 | `arush-jain.jpg` |
+| Ayush Indrajeet Kurakuri | 82 | `ayush-indrajeet-kurakuri.jpg` |
+| Dhriti Manchharamani | 80 | `dhriti-manchharamani.jpg` |
+| Dhruv Shinde | 79 | `dhruv-shinde.png` |
+| Gautam Vineet Tutari | 90 | `gautam-vineet-tutari.jpg` |
+| Harshil Singla | 94 | `harshil-singla.jpg` |
+| Harshit Godbole | 77 | `harshit-godbole.jpg` |
+| Kabir Bhatia | 95 | `kabir-bhatia.jpg` |
+| Murtaza Ravat | 99 | `murtaza-ravat.jpg` |
+| Neil Oza | 69 | `neil-oza.jpg` |
+| Pratyush Mohanty | 95 | `pratyush-mohanty.jpg` |
+| Purav Shah | 96 | `purav-shah.jpg` |
+| Saee Kane | 82 | `saee-kane.jpg` |
+| Samiksha Patil | 85 | `samiksha-patil.jpg` |
+| Sanjeevani Nirmal | 92 | `sanjeevani-nirmal.jpg` |
+| Sarakshi Tiwari | 70 | `sarakshi-tiwari.jpeg` |
+| Shanmukh Prasad | 68 | `shanmukh-prasad.jpg` |
+| Shreyas Mulik | 84 | `shreyas-mulik.jpg` |
+| Soham Deshmane | 88 | `soham-deshmane.jpg` |
+| Soham Shailesh Pathak | 63 | `soham-shailesh-pathak.jpg` |
+| Srushti Kokate | 95 | `srushti-kokate.jpg` |
+| Vihaan Prakash | 86 | `vihaan-prakash.jpg` |
 
 All result thumbnails use `img/results_yearwise/`. These are the current referenced files; preserve exact spelling, spaces, and suffixes:
 
@@ -106,7 +141,11 @@ All result thumbnails use `img/results_yearwise/`. These are the current referen
 
 **Interactions**
 
-- Clicking a result image opens the page's inline lightbox. It supports previous/next, Escape/backdrop close, and panning logic for large images.
+- Clicking a result image, including a 2026 portrait, opens the page's inline lightbox. It supports previous/next, Escape/backdrop close, and panning logic for large images.
+- The inline script adds the no-photo student data as cards, then sorts all `.class10-results-gallery` cards by numeric `.result-score` descending and displayed name ascending for ties; unprovided marks sort last. Keep student names in a paragraph outside `.result-score`. A blank placeholder uses `.result-photo-placeholder` with an accessible label.
+- Keep no-photo roster data and portrait markup in the same `.class10-results-gallery` so all students appear together. The lightbox is built from actual images only, so do not add a fake/broken `img` to placeholder cards.
+- Marks are copied from the user-provided 10th-class results table. The user confirmed the name matches for Ayush Indrajeet Kurakuri/Ayush Kurakuri, Gautam Vineet Tutari/Vineet Tutari, Saee Kane/Saee Pravin Kane, and Soham Shailesh Pathak/Soham Pathak. The source lists Soham Pathak as 63, so that is the value shown for the confirmed matching portrait. Scores are labelled “Marks” as in the source; they are not labelled as percentages.
+- New 2026 portraits use lazy loading and `object-fit: contain` within a consistent card height so faces and any existing image text are not cropped. The supplied folder also contained a PDF; it is not included in the gallery because this update uses the supplied portrait photos only.
 - Keep each `.result-item` image, `alt`, and caption together. Verify the lightbox after changing the item markup and verify the single-column mobile grid.
 
 ### Gallery — [`gallery.html`](../gallery.html)
