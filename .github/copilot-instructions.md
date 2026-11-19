@@ -1,55 +1,27 @@
-<!-- Auto-generated guidance for AI coding agents working on this repository -->
-# Copilot / AI agent instructions
+# Project Instructions for Coding Agents
 
-This repository is a small static website (no build system). The instructions below focus on the concrete, discoverable patterns an AI should follow to be immediately productive.
+## Read project context first
 
-1. Big picture
-- Type: Static client-side website built from plain HTML, CSS and vanilla JavaScript.
-- Main runtime: pages are standalone HTML files that dynamically load shared fragments (`header.html`, `footer.html`) via `fetch` in `script.js`.
-- Key files: `index.html`, `about.html`, `contact.html`, `header.html`, `footer.html`, `script.js`, `styles.css`.
+- Before starting a development task, read the repository's [`README.md`](../README.md) for the application purpose, page map, architecture, development workflow, and external-service constraints.
+- For any page, visual, copy, or asset change, also read [`docs/PAGE-IMPLEMENTATION.md`](../docs/PAGE-IMPLEMENTATION.md) for the current page structure, coding conventions, text/content inventory, image paths, and interaction-specific requirements.
+- Then inspect the current source for the requested change. Treat the source as authoritative if it differs from the README; update the README when a change materially changes documented project behavior or structure.
+- Trace shared behavior across its callers before editing. In particular, check the page, shared header/footer, JavaScript, styles, and referenced assets that the change can affect. Do not assume a page or asset exists based only on documentation.
 
-2. Important architecture details you must preserve
-- Shared header/footer are client-side includes: `script.js` fetches `header.html` and `footer.html` and injects them into DOM. Any change to navigation IDs or element structure must be reflected in `script.js` and in the footer highlight map.
-  - See the include pattern in [script.js](script.js) where `fetch('header.html')` and `fetch('footer.html')` are used.
-  - The footer contains a small page-highlighting map keyed by file names (e.g., `'contact.html': 'nav-contact'`) — update both locations together: [footer.html](footer.html) and [script.js](script.js).
+## Project architecture
 
-3. Project-specific conventions
-- Navigation links use element IDs like `nav-home`, `nav-contact` etc. The highlight script in `footer.html` expects these IDs. Do not rename nav IDs without updating the mapping.
-- Shared visual/layout utilities live in `styles.css`. Reuse the `.container` class and existing patterns (e.g., `.course-card`, `.contact-info`, `.milestone-timeline`) for consistent spacing and responsive behavior.
-- `logo.JPG` and `header-bg.jpg` are referenced by styles and header — preserve those asset filenames or update references consistently.
+- This is a static, multi-page website using plain HTML, CSS, and vanilla JavaScript. There is no package manifest, framework, backend, build step, or configured automated test suite.
+- Shared layout fragments are `header.html` and `footer.html`. `script.js` fetches them into `#common-header` and `#common-footer`; pages using these fragments must be served over HTTP, not opened directly with `file://`.
+- `header.html` defines navigation links and their IDs. `footer.html` contains the filename-to-navigation-ID map for active-page highlighting. Keep the link, ID, and map entry in sync when adding or changing pages. Verify the map against the actual source; not every existing navigation item is necessarily mapped.
+- `script.js` initializes the mobile menu after injecting the header. Preserve its expected `.hamburger` and `nav ul` selectors, or update the script together with any markup changes.
+- Shared styles and responsive rules are in `styles.css`. Some page-specific styles and interactions are inline in the relevant HTML files.
+- Image assets are referenced by relative paths, and some existing names contain spaces or mixed casing. Preserve exact paths and case when editing references; add useful alt text for new images.
 
-4. External integrations and assumptions
-- Font Awesome is loaded via CDN in `index.html` (and similarly available to other pages).
-- An Elfsight reviews widget is embedded on the homepage — it loads external scripts and markup. Changes to that area should preserve the embed container markup.
-- A WhatsApp direct link is present in `footer.html`; the number is used live and should not be changed without confirmation.
+## Development and verification
 
-5. Local developer workflows (how to run/preview)
-- There is no build step. To preview locally run a simple static server from the repo root. Example (PowerShell):
+- Make focused changes that follow the existing page and styling patterns. Keep customer-facing content, phone numbers, WhatsApp, maps, review links, and other external integrations unchanged unless the task specifically requests a change.
+- There are no project build, lint, or automated test commands. For code changes, preview the site using the local HTTP server instructions in the README and manually check affected behavior at desktop and mobile widths. For shared changes, check more than one page.
+- Report clearly if a requested behavior cannot be validated locally, for example because it depends on an external service.
 
-```powershell
-# from repository root
-python -m http.server 8000
-# or with Node if preferred
-npx http-server -c-1 . -p 8000
-```
+## Keep context current
 
-- Alternatively use the VS Code Live Server extension to preview pages.
-
-6. Editing guidance for AI changes
-- When modifying navigation or shared header/footer, update both `header.html` and the `navMap` in `footer.html` (the mapping uses file basenames like `contact.html`).
-- When adding new pages, add a nav link with the matching `id` (pattern: `nav-<slug>`) and add the mapping entry to the footer highlight code.
-- When changing DOM structure that `script.js` depends on (e.g., `.hamburger`, `nav ul`, element IDs), update `initMobileMenu()` and any selectors used in `script.js`.
-
-7. Examples (concrete edits)
-- To add a new page `pricing.html`:
-  - Create `pricing.html` by copying `about.html` pattern.
-  - Add `<li><a id="nav-pricing" href="pricing.html">Pricing</a></li>` to `header.html`.
-  - Add `'pricing.html': 'nav-pricing'` to the `navMap` object in `footer.html`.
-
-8. Tests & CI
-- There are no automated tests or CI config discoverable. Avoid adding assumptions about a build/test pipeline unless you add supporting config files (and describe them in this repo's README).
-
-9. Safety & live-content notes
-- The site contains live links (Google write-review, WhatsApp). Avoid making changes that alter these customer-facing links without explicit user approval.
-
-If anything here is unclear or you want a more opinionated contributor guide (linting, commit message style, or adding a small dev server script), tell me which areas to expand and I'll update this file.
+When a development change affects project structure, page responsibilities, runtime, local workflow, tests, integrations, or important conventions, update the relevant section of [`README.md`](../README.md) and/or [`docs/PAGE-IMPLEMENTATION.md`](../docs/PAGE-IMPLEMENTATION.md). Keep this instruction file concise and focused on guidance agents need on every task; keep detailed page and content context in the reference document.
