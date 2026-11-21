@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Week Practice Test Schedule | Poorwa Tutorials</title>
-    <meta name="description" content="Practice test schedule for next week at Poorwa Tutorials.">
-    <meta property="og:title" content="Next Week Practice Test Schedule">
-    <meta property="og:description" content="Tuesday: Linear Equations and Quadratic Equations. Thursday: Real Numbers and Polynomials.">
+    <title>Class 10 Practice Test Schedule | Poorwa Tutorials</title>
+    <meta name="description" content="Class 10 practice test schedule for 24 and 26 November 2026 at Poorwa Tutorials.">
+    <meta property="og:title" content="Class 10 Practice Test Schedule">
+    <meta property="og:description" content="Tuesday, 24 November 2026: Linear Equations and Quadratic Equations. Thursday, 26 November 2026: Real Numbers and Polynomials.">
     <meta property="og:url" content="https://poorwatutorials.in/test-schedule.html">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -21,7 +21,7 @@
         <section class="schedule-hero">
             <div class="container">
                 <p class="schedule-kicker"><i class="fas fa-calendar-check"></i> Student Notice</p>
-                <h1>Practice Test Schedule</h1>
+                <h1>Class 10 Practice Test Schedule</h1>
                 <p class="schedule-subtitle">Next Week</p>
             </div>
         </section>
@@ -30,11 +30,15 @@
             <div class="container">
                 <div class="schedule-grid">
                     <article class="schedule-card">
-                        <div class="schedule-day">
+                        <div class="schedule-date">
                             <i class="fas fa-calendar-day"></i>
-                            <span>Tuesday</span>
+                            <div>
+                                <span class="schedule-day">Tuesday</span>
+                                <strong>24 November 2026</strong>
+                            </div>
                         </div>
                         <h2>Practice Test</h2>
+                        <p class="test-description">Practice test covering the following chapters:</p>
                         <div class="chapter-list">
                             <div class="chapter"><span>1</span> Linear Equations</div>
                             <div class="chapter"><span>2</span> Quadratic Equations</div>
@@ -43,11 +47,15 @@
                     </article>
 
                     <article class="schedule-card">
-                        <div class="schedule-day">
+                        <div class="schedule-date">
                             <i class="fas fa-calendar-day"></i>
-                            <span>Thursday</span>
+                            <div>
+                                <span class="schedule-day">Thursday</span>
+                                <strong>26 November 2026</strong>
+                            </div>
                         </div>
                         <h2>Practice Test</h2>
+                        <p class="test-description">Practice test covering the following chapters:</p>
                         <div class="chapter-list">
                             <div class="chapter"><span>1</span> Real Numbers</div>
                             <div class="chapter"><span>2</span> Polynomials</div>
@@ -88,18 +96,21 @@
             box-shadow: 0 12px 35px rgba(32, 58, 97, 0.12);
             border-top: 6px solid #4A90E2;
         }
-        .schedule-day {
-            display: inline-flex;
+        .schedule-date {
+            display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             background: #edf5ff;
             color: #205080;
-            border-radius: 999px;
-            padding: 9px 17px;
-            font-weight: 800;
-            font-size: 1.15rem;
+            border-radius: 12px;
+            padding: 12px 16px;
         }
-        .schedule-card h2 { margin: 22px 0 18px; font-size: 1.75rem; }
+        .schedule-date i { font-size: 1.4rem; }
+        .schedule-date div { display: flex; flex-direction: column; line-height: 1.35; }
+        .schedule-day { font-weight: 800; font-size: 1.15rem; }
+        .schedule-date strong { font-size: 1rem; }
+        .schedule-card h2 { margin: 22px 0 8px; font-size: 1.75rem; }
+        .test-description { margin: 0 0 14px; color: #5f6f7f; }
         .chapter-list { display: grid; gap: 12px; }
         .chapter {
             display: flex;
