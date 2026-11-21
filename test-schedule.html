@@ -22,7 +22,6 @@
             <div class="container">
                 <p class="schedule-kicker"><i class="fas fa-calendar-check"></i> Student Notice</p>
                 <h1>Class 10 Practice Test Schedule</h1>
-                <p class="schedule-subtitle">Next Week</p>
             </div>
         </section>
 
@@ -38,11 +37,12 @@
                             </div>
                         </div>
                         <h2>Practice Test</h2>
-                        <p class="test-description">Practice test covering:</p>
+                        <p class="test-description">Practice test covering the following chapters:</p>
                         <div class="chapter-list">
                             <div class="chapter"><span>1</span> Linear Equations</div>
                             <div class="chapter"><span>2</span> Quadratic Equations</div>
                         </div>
+                        <p class="schedule-note">Please prepare both chapters.</p>
                     </article>
 
                     <article class="schedule-card">
@@ -54,15 +54,16 @@
                             </div>
                         </div>
                         <h2>Practice Test</h2>
-                        <p class="test-description">Practice test covering:</p>
+                        <p class="test-description">Practice test covering the following chapters:</p>
                         <div class="chapter-list">
                             <div class="chapter"><span>1</span> Real Numbers</div>
                             <div class="chapter"><span>2</span> Polynomials</div>
                         </div>
+                        <p class="schedule-note">Please prepare both chapters.</p>
                     </article>
                 </div>
 
-                <p class="schedule-reminder"><i class="fas fa-pencil"></i> Bring your notebook and come prepared.</p>
+                <p class="schedule-reminder"><i class="fas fa-pencil"></i> Bring your notebook and come prepared for the test.</p>
             </div>
         </section>
     </main>
@@ -76,9 +77,8 @@
             color: #fff;
             padding: 55px 20px;
         }
-        .schedule-hero h1 { color: #fff; font-size: 2.8rem; margin: 8px 0; }
+        .schedule-hero h1 { color: #fff; font-size: 2.8rem; margin: 8px 0 0; }
         .schedule-kicker { color: #f6cf65; font-size: 1.05rem; font-weight: 700; letter-spacing: 1px; }
-        .schedule-subtitle { color: #fff; font-size: 1.35rem; font-weight: 600; }
         .schedule-content { padding: 55px 0 70px; }
         .schedule-grid {
             display: grid;
@@ -134,6 +134,7 @@
             background: #4A90E2;
             color: #fff;
         }
+        .schedule-note { margin: 18px 0 0; color: #5f6f7f; font-size: 1rem; }
         .schedule-reminder {
             max-width: 950px;
             margin: 28px auto 0;
@@ -143,59 +144,11 @@
             padding: 14px 18px;
             font-weight: 700;
         }
-
         @media (max-width: 700px) {
-            .schedule-hero { padding: 18px 12px 14px; }
-            .schedule-kicker { font-size: 0.75rem; margin-bottom: 2px; }
-            .schedule-hero h1 { font-size: 1.45rem; line-height: 1.2; margin: 3px 0; }
-            .schedule-subtitle { font-size: 0.92rem; }
-            .schedule-content { padding: 12px 0 18px; }
-            .schedule-content .container { width: calc(100% - 20px); }
-            .schedule-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 8px;
-            }
-            .schedule-card {
-                border-radius: 10px;
-                padding: 9px 7px;
-                border-top-width: 4px;
-            }
-            .schedule-date {
-                gap: 5px;
-                border-radius: 7px;
-                padding: 7px 6px;
-            }
-            .schedule-date i { font-size: 0.82rem; }
-            .schedule-day { font-size: 0.78rem; }
-            .schedule-date strong { font-size: 0.66rem; }
-            .schedule-card h2 { font-size: 0.86rem; margin: 8px 0 2px; }
-            .test-description { font-size: 0.68rem; line-height: 1.15; margin-bottom: 5px; }
-            .chapter-list { gap: 5px; }
-            .chapter {
-                gap: 5px;
-                border-radius: 6px;
-                padding: 5px 4px;
-                font-size: 0.68rem;
-                line-height: 1.15;
-            }
-            .chapter span {
-                width: 20px;
-                height: 20px;
-                flex-basis: 20px;
-                font-size: 0.68rem;
-            }
-            .schedule-reminder {
-                margin-top: 8px;
-                border-radius: 7px;
-                padding: 7px 8px;
-                font-size: 0.72rem;
-                line-height: 1.25;
-            }
-        }
-
-        @media (max-width: 700px) and (orientation: portrait) {
-            .schedule-hero { padding-top: 10px; padding-bottom: 8px; }
-            .schedule-content { padding-top: 8px; padding-bottom: 10px; }
+            .schedule-hero { padding: 42px 16px; }
+            .schedule-hero h1 { font-size: 2.1rem; }
+            .schedule-grid { grid-template-columns: 1fr; }
+            .schedule-card { padding: 24px 18px; }
         }
     </style>
 </body>
