@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Week Practice Test Schedule | Poorwa Tutorials</title>
+    <meta name="description" content="Practice test schedule for next week at Poorwa Tutorials.">
+    <meta property="og:title" content="Next Week Practice Test Schedule">
+    <meta property="og:description" content="Tuesday: Linear Equations and Quadratic Equations. Thursday: Real Numbers and Polynomials.">
+    <meta property="og:url" content="https://poorwatutorials.in/test-schedule.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="common-header"></div>
+
+    <main class="schedule-page">
+        <section class="schedule-hero">
+            <div class="container">
+                <p class="schedule-kicker"><i class="fas fa-calendar-check"></i> Student Notice</p>
+                <h1>Practice Test Schedule</h1>
+                <p class="schedule-subtitle">Next Week</p>
+            </div>
+        </section>
+
+        <section class="schedule-content">
+            <div class="container">
+                <div class="schedule-grid">
+                    <article class="schedule-card">
+                        <div class="schedule-day">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>Tuesday</span>
+                        </div>
+                        <h2>Practice Test</h2>
+                        <div class="chapter-list">
+                            <div class="chapter"><span>1</span> Linear Equations</div>
+                            <div class="chapter"><span>2</span> Quadratic Equations</div>
+                        </div>
+                        <p class="schedule-note">Please prepare both chapters.</p>
+                    </article>
+
+                    <article class="schedule-card">
+                        <div class="schedule-day">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>Thursday</span>
+                        </div>
+                        <h2>Practice Test</h2>
+                        <div class="chapter-list">
+                            <div class="chapter"><span>1</span> Real Numbers</div>
+                            <div class="chapter"><span>2</span> Polynomials</div>
+                        </div>
+                        <p class="schedule-note">Please prepare both chapters.</p>
+                    </article>
+                </div>
+
+                <p class="schedule-reminder"><i class="fas fa-pencil"></i> Bring your notebook and come prepared for the test.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="common-footer"></div>
+
+    <style>
+        .schedule-page { background: #f4f8fc; }
+        .schedule-hero {
+            background: linear-gradient(135deg, #203a61 0%, #4A90E2 100%);
+            color: #fff;
+            padding: 55px 20px;
+        }
+        .schedule-hero h1 { color: #fff; font-size: 2.8rem; margin: 8px 0; }
+        .schedule-kicker { color: #f6cf65; font-size: 1.05rem; font-weight: 700; letter-spacing: 1px; }
+        .schedule-subtitle { color: #fff; font-size: 1.35rem; font-weight: 600; }
+        .schedule-content { padding: 55px 0 70px; }
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .schedule-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 12px 35px rgba(32, 58, 97, 0.12);
+            border-top: 6px solid #4A90E2;
+        }
+        .schedule-day {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #edf5ff;
+            color: #205080;
+            border-radius: 999px;
+            padding: 9px 17px;
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+        .schedule-card h2 { margin: 22px 0 18px; font-size: 1.75rem; }
+        .chapter-list { display: grid; gap: 12px; }
+        .chapter {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8fbff;
+            border: 1px solid #e3edf8;
+            border-radius: 10px;
+            padding: 13px;
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: left;
+        }
+        .chapter span {
+            width: 34px;
+            height: 34px;
+            flex: 0 0 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #4A90E2;
+            color: #fff;
+        }
+        .schedule-note { margin: 18px 0 0; color: #5f6f7f; font-size: 1rem; }
+        .schedule-reminder {
+            max-width: 950px;
+            margin: 28px auto 0;
+            background: #fff3cd;
+            color: #6f5600;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-weight: 700;
+        }
+        @media (max-width: 700px) {
+            .schedule-hero { padding: 42px 16px; }
+            .schedule-hero h1 { font-size: 2.1rem; }
+            .schedule-grid { grid-template-columns: 1fr; }
+            .schedule-card { padding: 24px 18px; }
+        }
+    </style>
+</body>
+</html>
